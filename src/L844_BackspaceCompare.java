@@ -3,29 +3,82 @@ import java.util.Stack;
 
 public class L844_BackspaceCompare {
     /**
-     * 方法一：倒着 + StringBuilder
+     * 方法一：双指针实时比对
+     * TC: O(n)
+     * SC: O(1)
      */
     public boolean backspaceCompare_1(String S, String T) {
+        char[] charsS = S.toCharArray();
+        char[] charsT = T.toCharArray();
+        int indexS = charsS.length - 1;
+        int indexT = charsT.length - 1;
+
+        while (indexS >= 0 || indexT >= 0) {
+            indexS = getValidIndex(charsS, indexS);
+            indexT = getValidIndex(charsT, indexT);
+            if (indexS >= 0 && indexT >= 0 && charsS[indexS] != charsT[indexT]) return false;
+            if ((indexS < 0 && indexT >= 0) || (indexS >= 0 && indexT < 0)) return false;
+            indexS--;
+            indexT--;
+        }
+
+        return true;
+    }
+
+    private int getValidIndex(char[] chars, int i) {
+        int count = 0;
+        for (; i > -1; i--) {
+            if (chars[i] == '#') {
+                count++;
+                continue;
+            }
+            if (count > 0) {
+                count--;
+                continue;
+            }
+            break;
+        }
+        return i;
+    }
+
+    /**
+     * 方法二：倒序 + StringBuilder
+     * TC: O(n)
+     * SC: O(n)
+     */
+    public boolean backspaceCompare_2(String S, String T) {
         return rebuild(S).equals(rebuild(T));
     }
 
     /**
-     * 方法二：栈
+     * 方法三：栈
+     * TC: O(n)
+     * SC: O(n)
      */
-    public boolean backspaceCompare_2(String S, String T) {
+    public boolean backspaceCompare_3(String S, String T) {
         return toStack(S).equals(toStack(T));
     }
 
     /**
-     * 方法三：纯字符串处理
+     * 方法四：纯字符串处理
+     * TC: O(n)
+     * SC: O(n)
      */
-    public boolean backspaceCompare_3(String S, String T) {
+    public boolean backspaceCompare_4(String S, String T) {
         return clear(S).equals(clear(T));
     }
 
 
     private String clear(String str) {
+        int i = str.indexOf('#');
+        while (i > -1) {
+            str = str.substring(0, i == 0 ? 0 : i - 1) + str.substring(i + 1);
+            i = str.indexOf('#');
+        }
+        return str;
+
         /*
+        // 另一种字符串处理
         for (char c : str.toCharArray()) {
             if (c == '#') {
                 int i = str.indexOf('#');
@@ -33,13 +86,6 @@ public class L844_BackspaceCompare {
             }
         }
         */
-
-        int i = str.indexOf('#');
-        while (i > -1) {
-            str = str.substring(0, i == 0 ? 0 : i - 1) + str.substring(i + 1);
-            i = str.indexOf('#');
-        }
-        return str;
 
     }
 
@@ -77,6 +123,6 @@ public class L844_BackspaceCompare {
 
     public static void main(String[] args) {
         L844_BackspaceCompare compare = new L844_BackspaceCompare();
-        System.out.println(compare.backspaceCompare_3("a##c", "#a#c"));
+        System.out.println(compare.backspaceCompare_1("a#d#c", "#a#c"));
     }
 }
