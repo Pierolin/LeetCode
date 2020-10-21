@@ -1,6 +1,10 @@
 import java.util.Arrays;
 import java.util.Stack;
 
+/**
+ * 844. 比较含退格的字符串
+ * https://leetcode-cn.com/problems/backspace-string-compare/
+ */
 public class L844_BackspaceCompare {
     /**
      * 方法一：双指针实时比对
@@ -123,6 +127,6 @@ public class L844_BackspaceCompare {
 
     public static void main(String[] args) {
         L844_BackspaceCompare compare = new L844_BackspaceCompare();
-        System.out.println(compare.backspaceCompare_1("a#d#c", "#a#c"));
+        System.out.println(compare.backspaceCompare_1("a#d#cf", "#a#c"));
     }
 }
