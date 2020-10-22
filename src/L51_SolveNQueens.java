@@ -81,7 +81,9 @@ public class L51_SolveNQueens {
     public static void main(String[] args) {
         L51_SolveNQueens solveNQueens = new L51_SolveNQueens();
         List<List<String>> result = solveNQueens.solveNQueens(5);
-        System.out.println(result.toString());
+        for(List lst:result) {
+            System.out.println(lst.toString());
+        }
 
     }
 }
