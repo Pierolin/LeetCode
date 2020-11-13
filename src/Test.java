@@ -6,4 +6,6 @@ public class Test {
         System.out.println(16 >> 1);
 
     }
+
+
 }
