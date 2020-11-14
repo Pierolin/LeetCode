@@ -3,8 +3,8 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        List<List<Integer>> list = new ArrayList<>();
-    }
+        Test test = new Test();
 
+    }
 
 }
