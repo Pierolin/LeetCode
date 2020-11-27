@@ -6,6 +6,14 @@ import java.util.Comparator;
  * https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/
  */
 public class L452_FindMinArrowShots {
+    /**
+     * 排序比较法
+     * Time: O(nlogn)
+     * Space: O(1)
+     * 解题思路：
+     * 1. 对数组进行排序;
+     * 2.
+     */
     public int findMinArrowShots(int[][] points) {
         if (points == null || points.length == 0) return 0;
 
