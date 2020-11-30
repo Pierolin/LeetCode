@@ -9,7 +9,7 @@ import java.util.Queue;
  */
 public class L222_CountNodes {
     /**
-     * 方法二：完全二叉树和满二叉树的特性
+     * 方法一：完全二叉树和满二叉树的特性
      * Time: O(logn)
      * Space: O(n)
      * 解题思路：
@@ -44,7 +44,7 @@ public class L222_CountNodes {
     }
 
     /**
-     * 方法一(1)：DFS + 递归
+     * 方法二(1)：DFS + 递归
      * Time: O(n)
      * Space: O(1)
      * 解题思路：
@@ -61,7 +61,7 @@ public class L222_CountNodes {
     }
 
     /**
-     * 方法一(2)：DFS + 递归
+     * 方法二(2)：DFS + 递归
      * Time: O(n)
      * Space: O(1)
      * 解题思路：
@@ -73,7 +73,7 @@ public class L222_CountNodes {
     }
 
     /**
-     * 方法二：BFS
+     * 方法三：BFS
      * Time: O(n)
      * Space: O(n)
      * 解题思路：
