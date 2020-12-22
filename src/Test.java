@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        List<Integer>  list = new ArrayList<>();
-
+        List nums = new ArrayList();
+        nums.get(1);
     }
 
 }
