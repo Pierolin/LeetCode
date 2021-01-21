@@ -11,7 +11,7 @@ public class L452_FindMinArrowShots {
     /**
      * 排序比较法
      * Time: O(nlogn)
-     * Space: O(1)
+     * Space: O(logn)
      * 解题思路：
      * 1. 对数组进行排序;
      * 2.
