@@ -1,7 +1,16 @@
-import java.net.URL;
-import java.util.*;
+package q2;
 
-public class Test {
+import java.util.Stack;
+
+public class L227_Calculate {
+    /**
+     * 方法一：栈
+     * Time: O(n)
+     * Space: O(n)
+     * 解题关键：
+     * 1. 把等式看作各个数字相加, 把这些数字一一存入栈内;
+     * 2. 判断当前数的运算符，如果是 + 则为正数，如果是 - 则为负数，如果是 * 则当前数与栈顶元素相乘后替换栈顶元素，如果是 / 则栈顶元素除以当前数后替换栈顶元素。
+     */
     public int calculate(String s) {
         char[] chars = s.toCharArray();
         Stack<Integer> stack = new Stack<>();
@@ -37,6 +46,4 @@ public class Test {
         int num = c - '0';
         return num >= 0 && num <= 9;
     }
-
 }
-
