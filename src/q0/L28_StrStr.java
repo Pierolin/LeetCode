@@ -14,7 +14,6 @@ public class L28_StrStr {
         int hLen = haystack.length();
         int nLen = needle.length();
         if (nLen == 0 ) return 0;
-
         int[] next = getNext(needle);
         int j = 0;
         for (int i = 0; i < hLen; i++) {
