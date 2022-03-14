@@ -38,5 +38,14 @@ public class Test {
         return num >= 0 && num <= 9;
     }
 
+    public static void main(String[] args) {
+        String a = "Hello";
+        // \u000d a ="World";
+        System.out.println(a);
+        // \u000d a ="Hello World";
+        System.out.println(a);
+
+    }
+
 }
 
