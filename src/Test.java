@@ -39,12 +39,17 @@ public class Test {
     }
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         String a = "Hello";
         // \u000d a ="World";
         System.out.println(a);
         // \u000d a ="Hello World";
         System.out.println(a);
 
+=======
+        Deque<String> arrayQueqe = new ArrayDeque();
+        arrayQueqe.toArray();
+>>>>>>> b11524694bf56caa206faa1d64f936bf9f200980
     }
 
 }
