@@ -38,5 +38,10 @@ public class Test {
         return num >= 0 && num <= 9;
     }
 
+    public static void main(String[] args) {
+        Deque<String> arrayQueqe = new ArrayDeque();
+        arrayQueqe.toArray();
+    }
+
 }
 
