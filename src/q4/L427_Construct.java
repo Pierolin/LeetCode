@@ -1,7 +1,16 @@
 package q4;
 
+/**
+ * 427. 建立四叉树
+ * https://leetcode.cn/problems/construct-quad-tree/
+ */
 public class L427_Construct {
-    public Node construct(int[][] grid) {
+    /**
+     * 方法一：递归法
+     * TC: O(n^2logn)
+     * SC: O(logn)
+     */
+    public Node construct_1(int[][] grid) {
         return dfs(grid, 0, 0, grid.length, grid.length);
     }
 
