@@ -9,7 +9,7 @@ import java.util.Deque;
  */
 public class L735_AsteroidCollision {
     /**
-     *方法一：栈模拟
+     * 方法二：栈模拟
      * TC: O(n)
      * SC: O(n)
      */
@@ -17,7 +17,7 @@ public class L735_AsteroidCollision {
         Deque<Integer> stack = new ArrayDeque<Integer>();
         for (int aster : asteroids) {
             boolean isLived = true;
-            while (aster < 0 &&  !stack.isEmpty() && stack.peek() >0 && isLived) {
+            while (aster < 0 && !stack.isEmpty() && stack.peek() > 0 && isLived) {
                 isLived = -aster > stack.peek();
                 if (-aster >= stack.peek()) stack.pop();
             }
@@ -31,7 +31,7 @@ public class L735_AsteroidCollision {
     }
 
     /**
-     *方法一：暴力枚举
+     * 方法一：暴力枚举
      * TC: O(n^2)
      * SC: O(n)
      */
@@ -58,14 +58,14 @@ public class L735_AsteroidCollision {
         }
 
         int size = 0;
-        for (int asteroid : asteroids) {
-            if (asteroid != 0) size++;
+        for (int aster : asteroids) {
+            if (aster != 0) size++;
         }
 
         int[] result = new int[size];
         int i = 0;
-        for (int asteroid : asteroids) {
-            if (asteroid != 0) result[i++] = asteroid;
+        for (int aster : asteroids) {
+            if (aster != 0) result[i++] = aster;
         }
 
         return result;
