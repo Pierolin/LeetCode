@@ -4,7 +4,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * 735. 行星碰撞
+ * 735. 735. Asteroid Collision
+ * 行星碰撞
  * https://leetcode.cn/problems/asteroid-collision/submissions/
  */
 public class L735_AsteroidCollision {

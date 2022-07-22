@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 558. 四叉树交集
+ * 745. Prefix and Suffix Search
+ * 前缀和后缀搜索
  * https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/
  */
 public class L745_WordFilter {
