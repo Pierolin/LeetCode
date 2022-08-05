@@ -39,6 +39,8 @@ public class Test {
     }
 
     public static void main(String[] args) {
+        Set<Integer> set = new HashSet();
+        
         String a = "Hello";
         // \u000d a ="World";
         System.out.println(a);
