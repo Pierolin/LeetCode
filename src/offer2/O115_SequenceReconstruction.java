@@ -20,7 +20,7 @@ public class O115_SequenceReconstruction {
         if (nums.length == 0 || sequences.length == 0) return false;
 
         int len = nums.length;
-        // record in degrees and generate graph
+        // record in degrees and generate graphdfdd
         int[] inDegrees = new int[len + 1];
         Set<Integer>[] points = new Set[len + 1];
         for (int i = 1; i <= len; i++) points[i] = new HashSet<Integer>();
