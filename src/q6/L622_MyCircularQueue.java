@@ -1,5 +1,10 @@
 package q6;
 
+/**
+ * 622. 设计循环队列
+ * Design Circular Queue
+ * https://leetcode.cn/problems/design-circular-queue/
+ */
 public class L622_MyCircularQueue {
 
     private int size;
