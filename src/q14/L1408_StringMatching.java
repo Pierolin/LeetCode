@@ -34,8 +34,8 @@ public class L1408_StringMatching {
 
     /**
      * 方法二：拼接字符串
-     * @param words
-     * @return
+     * TC: O(n^2)
+     * SC: O(1)
      */
     public List<String> stringMatching_2(String[] words) {
         List<String> list = new ArrayList<>();
