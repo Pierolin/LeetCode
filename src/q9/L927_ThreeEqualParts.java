@@ -12,7 +12,42 @@ public class L927_ThreeEqualParts {
      * TC: O(n)
      * SC: O(1)
      */
-    public int[] threeEqualParts(int[] arr) {
+    public int[] threeEqualParts_2(int[] arr) {
+        int n = arr.length;
+        int i = -1;
+        int j = -1;
+        int[] fail = new int[] {-1, -1};
+
+        int ones = 0;
+        for (int d : arr) ones += d;
+        if (ones == 0) return new int[]{0,2};
+        if (ones % 3 > 0) return fail;
+
+        int perOnes = ones / 3;
+        int count = 0;
+        for (int x = 0; x < n; x++) {
+            count += arr[x];
+            if (arr[x] == 1) {
+                if (count == 1) {
+                    i = x;
+                } else if (count == perOnes + 1) {
+                    j = x;
+                }
+            }
+            if (count > perOnes * 2) {
+                if (arr[x] != arr[i++] || arr[x] != arr[j++]) return fail;
+            }
+        }
+
+        return new int[]{i - 1, j};
+    }
+
+    /**
+     * 方法一：计数模拟
+     * TC: O(n)
+     * SC: O(1)
+     */
+    public int[] threeEqualParts_1(int[] arr) {
         int i = -1;
         int j = -1;
 
