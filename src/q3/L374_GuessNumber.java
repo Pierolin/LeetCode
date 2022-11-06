@@ -1,5 +1,10 @@
 package q3;
 
+/**
+ * 374. 猜数字大小
+ * 374. Guess Number Higher or Lower
+ * https://leetcode.cn/problems/guess-number-higher-or-lower/
+ **/
 public class L374_GuessNumber {
 
     public int guessNumber(int n) {
