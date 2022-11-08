@@ -19,8 +19,8 @@ public class L816_AmbiguousCoordinates {
         s = s.substring(1, s.length() - 1);
         int n = s.length();
         for (int i = 0; i < n - 1; i++) {
-            List<String> first = generate(s.substring(0, i + 1));
-            List<String> second = generate(s.substring(i + 1));
+            List<String> first = generateNumber(s.substring(0, i + 1));
+            List<String> second = generateNumber(s.substring(i + 1));
             for (int j = 0; j < first.size(); j++) {
                 String str1 = first.get(j);
                 for (int x = 0; x < second.size(); x++) {
@@ -34,7 +34,7 @@ public class L816_AmbiguousCoordinates {
         return list;
     }
 
-    private List<String> generate(String str) {
+    private List<String> generateNumber(String str) {
         int n = str.length();
         List<String> list = new ArrayList<>();
         for (int i = 0; i < n; i++) {
