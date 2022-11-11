@@ -12,22 +12,21 @@ public class L34_SearchRange {
      * 解题思路：
      * 1. 二分查找分别找出目标值的的最左边索引和最右边索引
      */
-    public int[] searchRange_1(int[] nums, int target) {
-        int start = binarySearch(nums, target, true);
-        int end = binarySearch(nums, target, false);
+    public int[] searchRange(int[] nums, int target) {
+        int right = nums.length - 1;
+        int start = binarySearch(nums, 0, right, target, true);
+        int end = (start == -1 ? -1 : binarySearch(nums, start, right, target, false));
         return new int[]{start, end};
     }
 
-    private int binarySearch(int[] nums, int target, boolean isFindingLeft) {
+    private int binarySearch(int[] nums, int left, int right, int target, boolean isSearchingStart) {
         int ans = -1;
-        int left = 0;
-        int right = nums.length - 1;
         while (left <= right) {
             int mid = left + ((right - left) >> 1);
             int num = nums[mid];
             if (num == target) {
                 ans = mid;
-                if (isFindingLeft) {
+                if (isSearchingStart) {
                     right = mid - 1;
                 } else {
                     left = mid + 1;
