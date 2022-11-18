@@ -4,7 +4,7 @@ import java.util.*;
 
 public class L792_NumMatchingSubseq {
     /**
-     * 方法一：分桶 (多指针）
+     * 方法二：分桶 (多指针）
      * TC: O(sum(m.length) + n)
      * SC: O(n)
      */

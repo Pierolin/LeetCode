@@ -14,25 +14,24 @@ public class L74_SearchMatrix {
      */
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) return false;
+
         int rows = matrix.length;
         int cols = matrix[0].length;
-        int count = rows * cols;
-        int left = 0;
-        int right = count - 1;
 
+        int left = 0;
+        int right = rows * cols - 1;
         while (left <= right) {
-            int m = (left + right) / 2;
-            int r = m / cols;
-            int c = m % cols;
-            if (matrix[r][c] == target) {
-                return true;
-            } else if (matrix[r][c] < target) {
-                left = m + 1;
+            int mid = (left + right) >> 1;
+            int r = mid / cols;
+            int c = mid % cols;
+            int num = matrix[r][c];
+            if (num == target) return true;
+            if (num < target) {
+                left = mid + 1;
             } else {
-                right = m - 1;
+                right = mid - 1;
             }
         }
-
         return false;
     }
 
