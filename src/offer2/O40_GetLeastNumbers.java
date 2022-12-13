@@ -1,6 +1,8 @@
+package offer2;
+
 import java.util.Arrays;
 
-public class LO40_GetLeastNumbers {
+public class O40_GetLeastNumbers {
 
     public int[] getLeastNumbers(int[] arr, int k) {
         if (arr == null || k == 0) return new int[0];
