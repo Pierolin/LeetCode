@@ -35,15 +35,6 @@ public class L2011_FinalValueAfterOperations {
 
 
     /**
-     * 方法四： stream 法
-     * TC: O(n)
-     * SC: O(1)
-     */
-    public int FinalValueAfterOperations_4(String[] operations) {
-        return Arrays.stream(operations).mapToInt(s -> 44 - s.charAt(1)).sum();
-    }
-
-    /**
      * 方法三： charAt 法
      * TC: O(n)
      * SC: O(1)
@@ -56,7 +47,14 @@ public class L2011_FinalValueAfterOperations {
         return x;
     }
 
-
+    /**
+     * 方法四： stream 法
+     * TC: O(n)
+     * SC: O(1)
+     */
+    public int FinalValueAfterOperations_4(String[] operations) {
+        return Arrays.stream(operations).mapToInt(s -> 44 - s.charAt(1)).sum();
+    }
 
 
 }
