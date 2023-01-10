@@ -25,15 +25,15 @@ public class L211_WordDictionary {
     }
 
     public boolean search(String word) {
-        return search(this, word);
+        return dfs(this, word);
     }
 
-    private boolean search(L211_WordDictionary node, String word) {
+    private boolean dfs(L211_WordDictionary node, String word) {
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             if (c == '.') {
                 for (L211_WordDictionary child : node.children) {
-                    if (child != null && search(child, word.substring(i + 1))) return true;
+                    if (child != null && dfs(child, word.substring(i + 1))) return true;
                 }
                 return false;
             } else {
