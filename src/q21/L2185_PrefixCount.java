@@ -35,7 +35,7 @@ public class L2185_PrefixCount {
      * TC:
      * SC:
      */
-    public int prefixCount_2(String[] words, String pref) {
+    public int prefixCount_3(String[] words, String pref) {
         Trie root = new Trie();
 
         /*
