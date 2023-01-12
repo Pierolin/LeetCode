@@ -22,4 +22,21 @@ public class L2287_RearrangeCharacters {
             max++;
         }
     }
+
+    /**
+     * 方法一：计数倍数法
+     * TC: O(n + m)
+     * SC: O(1)
+     */
+    public int rearrangeCharacters_2(String s, String target) {
+        int max = s.length();
+        int[] sArr = new int[26];
+        int[] tArr = new int[26];
+        for (char c : s.toCharArray()) sArr[c - 'a']++;
+        for (char c : target.toCharArray()) tArr[c - 'a']++;
+        for (int i = 0; i < 26; i++) {
+            if (tArr[i] > 0) max = Math.min(max, sArr[i] / tArr[i]);
+        }
+        return max;
+    }
 }
