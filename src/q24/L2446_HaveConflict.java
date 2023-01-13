@@ -28,8 +28,7 @@ public class L2446_HaveConflict {
         int event2Start = toMinutes(event2[0]);
         int event2End = toMinutes(event2[1]);
 
-        return (event2Start >= event1Start && event2Start <= event1End) || (event1Start >= event2Start && event1Start <= event2End);
-
+        return  !(event2Start > event1End || event2End < event1Start);
     }
 
     private int toMinutes(String time) {
