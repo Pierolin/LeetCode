@@ -53,7 +53,6 @@ public class L1814_CountNicePairs {
         for (long val : map.values()) total += val * (val - 1) / 2;
         return (int)(total % MOD);
     }
-dddrrrrr
 
     private int rev(int num) {
         int revNum = 0;
