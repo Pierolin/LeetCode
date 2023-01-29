@@ -1,5 +1,10 @@
 package q16;
 
+/**
+ * 1664. 生成平衡数组的方案数
+ * Ways to Make a Fair Array
+ * https://leetcode.cn/problems/ways-to-make-a-fair-array/
+ */
 public class L1664_WaysToMakeFair {
 
     /**

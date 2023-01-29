@@ -1,5 +1,10 @@
 package q0;
 
+/**
+ * 14. 最长公共前缀
+ * Longest Common Prefix
+ * https://leetcode.cn/problems/longest-common-prefix/
+ */
 public class L14_LongestCommonPrefix {
     /**
      * 方法一：二分法
