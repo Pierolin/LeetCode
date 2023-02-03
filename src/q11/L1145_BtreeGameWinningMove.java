@@ -10,24 +10,26 @@ public class L1145_BtreeGameWinningMove {
      * SC: O(n)
      */
     public boolean btreeGameWinningMove(TreeNode root, int n, int x) {
-        TreeNode xNode = searchXNode(root, x);
-        int leftCount = countChildNodes(xNode.left);
-        int rightCount = countChildNodes(xNode.right);
+        TreeNode xNode = findNode(root, x);
+        int leftCount = countNodes(xNode.left);
+        int rightCount = countNodes(xNode.right);
         int upCount = n - leftCount - rightCount - 1;
-        if (upCount > leftCount + rightCount + 1 || leftCount > upCount + rightCount + 1 || rightCount > upCount + leftCount + 1) return true;
+        // if (upCount > leftCount + rightCount + 1 || leftCount > upCount + rightCount + 1 || rightCount > upCount + leftCount + 1) return true;
+        int half = n >> 1;
+        if (upCount > half || leftCount > half || rightCount > half) return true;
         return false;
     }
 
-    private TreeNode searchXNode(TreeNode node, int x) {
+    private TreeNode findNode(TreeNode node, int x) {
         if (node == null) return null;
         if (node.val == x) return node;
-        TreeNode left = searchXNode(node.left, x);
+        TreeNode left = findNode(node.left, x);
         if (left != null) return left;
-        return searchXNode(node.right, x);
+        return findNode(node.right, x);
     }
 
-    private int countChildNodes(TreeNode node) {
+    private int countNodes(TreeNode node) {
         if (node == null) return 0;
-        return countChildNodes(node.left) + countChildNodes(node.right) + 1;
+        return countNodes(node.left) + countNodes(node.right) + 1;
     }
 }
