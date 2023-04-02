@@ -9,7 +9,8 @@ public class L1255_MaxScoreWords {
 
     /**
      * 方法一：状态压缩 / 位运算枚举
-     * TC: O(L+(S+∑)×2^n)，其中 L 是数组 letters 的长度，S 是字符串数组 words 的所有字符串长度，∑=26 是字符集大小。words 中的每个单词存在于 2^(n−1) 个子集中，因此每个单词被遍历 2^(n-1) 次。
+     * TC: O(L+(S+∑)×2^n)，其中 L 是数组 letters 的长度，S 是字符串数组 words 的所有字符串长度，∑=26 是字符集大小。words 中的每个
+     *     单词存在于 2^(n−1) 个子集中，因此每个单词被遍历 2^(n-1) 次。
      * SC: O(∑)。保存 arrLetter 和 arrWord 需要 O(∑) 的空间。
      */
     public int maxScoreWords_1(String[] words, char[] letters, int[] score) {
