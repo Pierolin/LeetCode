@@ -1,5 +1,10 @@
 package q23;
 
+/**
+ * 2367. 算术三元组的数目
+ * Number of Arithmetic Triplets
+ * https://leetcode.cn/problems/number-of-arithmetic-triplets
+ */
 public class L2367_ArithmeticTriplets {
     /**
      * 方法一：数组哈希 + 一次循环
