@@ -5,6 +5,7 @@ import share.ListNode;
 /**
  * 2816. Double a Number Represented as a Linked List
  * 翻倍以链表形式表示的数字
+ * https://leetcode.cn/problems/double-a-number-represented-as-a-linked-list
  */
 public class L2816_DoubleIt {
     /**
@@ -36,12 +37,12 @@ public class L2816_DoubleIt {
      * Space: O(n)
      */
     public ListNode doubleIt_2(ListNode head) {
-        ListNode doubleHead = new ListNode();
-        ListNode curr = doubleHead;
+        ListNode doubleNode = new ListNode();
+        ListNode curr = doubleNode;
         if (head.val > 4) {
-            doubleHead.val = 1;
-            doubleHead.next =  new ListNode();
-            curr = doubleHead.next;
+            doubleNode.val = 1;
+            doubleNode.next = new ListNode();
+            curr = doubleNode.next;
         }
 
         while (head != null) {
@@ -53,7 +54,7 @@ public class L2816_DoubleIt {
             curr = curr.next;
             head = head.next;
         }
-        return doubleHead;
+        return doubleNode;
     }
 
     /**
@@ -63,9 +64,11 @@ public class L2816_DoubleIt {
      */
     public ListNode doubleIt_3(ListNode head) {
         if (head.val > 4) head = new ListNode(0, head);
-        for (ListNode curr = head; curr != null; curr = curr.next) {
+        ListNode curr = head;
+        while (curr != null) {
             curr.val = curr.val * 2 % 10;
             if (curr.next != null && curr.next.val > 4) curr.val++;
+            curr = curr.next;
         }
         return head;
     }
