@@ -25,27 +25,25 @@ public class L121_MaxProfit {
      *      dp[prices.length - 1][0];
      */
     public int maxProfit_1(int[] prices) {
-        if (prices == null) return 0;
-        int len = prices.length;
-        if (len == 0) return 0;
+        int n = prices.length;
         /*
-        int[][] dp = new int[len][2];
+        int[][] dp = new int[n][2];
         dp[0][0] = 0;
         dp[0][1] = prices[0];
-        for (int i = 1; i < len; i++) {
+        for (int i = 1; i < n; i++) {
             dp[i][0] = Math.max(prices[i] - dp[i - 1][1], dp[i - 1][0]);
             dp[i][1] = Math.min(dp[i - 1][1], prices[i]);
         }
-        return dp[len - 1][0];
+        return dp[n - 1][0];
         */
         // 空间压缩
-        int maxProfit = 0;
-        int minPrice = prices[0];
-        for (int i = 1; i < len; i++) {
-            maxProfit = Math.max(maxProfit, prices[i] - minPrice);
-            minPrice = Math.min(minPrice, prices[i]);
+        int maxPro = 0;
+        int minPri = Integer.MAX_VALUE;
+        for (int p : prices) {
+            maxPro = Math.max(maxPro, p - minPri);
+            minPri = Math.min(minPri, p);
         }
-        return maxProfit;
+        return maxPro;
     }
 
     /**
